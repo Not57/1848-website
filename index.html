@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1848 — Hope Has a Home.</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <a href="index.html"><img src="images/1848-logo.png" alt="1848" class="logo-img" /></a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#classes">Classes</a></li>
+      <li><a href="donate.html#problem">Learn More</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="donate.html" class="btn-donate">Donate</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="toggleMenu()">☰</button>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="home" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <img src="images/1848-logo.png" alt="1848" class="hero-logo-img" />
+      <p class="hero-tagline">Master your craft.</p>
+      <p class="hero-sub">
+        Learn blacksmithing, welding, and CAD alongside essential life skills at 1848.
+      </p>
+      <a href="#classes" class="btn-primary">Explore Classes</a>
+    </div>
+  </section>
+
+<!-- ===== CLASSES ===== -->
+  <section id="classes" class="classes-section">
+    <div class="container">
+      <h2>Find Your Class. Build Your Future.</h2>
+      <p class="section-sub">People search for what they want to learn — not where it is.</p>
+
+      <div class="location-picker">
+        <p class="location-prompt">Step 1 — Choose your location</p>
+        <div class="location-cards">
+
+          <div class="location-card" data-url="https://kilroysworkshop.com/ords/r/eduslate/workshop/search" data-location="colorado-springs">
+            <img class="location-flag location-flag--colorado" src="images/flag images/Flag_of_Colorado.svg" alt="Colorado" />
+            <strong>Colorado Springs, CO</strong>
+            <span>7363 McClain Point #110<br />Colorado Springs, CO 80915</span>
+          </div>
+
+          <div class="location-card" data-url="https://kilroysworkshop.com/ords/r/eduslate/workshop/search" data-location="littleton">
+            <img class="location-flag location-flag--colorado" src="images/flag images/Flag_of_Colorado.svg" alt="Colorado" />
+            <strong>Littleton, CO</strong>
+            <span>12339 Mead Way<br />Littleton, CO 80125</span>
+          </div>
+
+          <div class="location-card" data-url="https://kilroysworkshop.com/ords/r/eduslate/workshop/search" data-location="mckinney">
+            <img class="location-flag location-flag--texas" src="images/flag images/texas-flag-fully-sewn-design-usa-flag-co--2.webp" alt="Texas" />
+            <strong>McKinney, TX</strong>
+            <span>5803 FM 543<br />McKinney, TX 75071</span>
+          </div>
+
+        </div>
+      </div>
+      <p class="location-select-prompt">Select a location above to browse classes</p>
+
+      <p class="location-prompt" id="step2-label" style="display:none; margin-top:40px; margin-bottom:20px;">Step 2 — Choose Your Class</p>
+
+      <div class="disciplines-grid disciplines-grid--hidden">
+
+        <div class="discipline-card" data-locations="colorado-springs littleton mckinney">
+          <div class="discipline-cover">
+            <img src="images/kilroy_shop_pics/weldinggroup.jpeg" alt="Welding" class="img-shift-down" />
+            <div class="discipline-cover-overlay">
+              <h3>Welding</h3>
+            </div>
+          </div>
+          <div class="discipline-body">
+            <a href="https://www.kilroysworkshop.com/ords/r/eduslate/workshop/search?p1_link_code=YJW03I2XFV&clear=1&cs=1iUy7mjiWvACVoZgdpIAochMU9QSxAf1VMMocPTHw0UW5BdloLd8yYaESC-2EKlGfB0rUx_ypN5g3ZbbtsYF-PA" class="btn-secondary" data-fixed-href="https://www.kilroysworkshop.com/ords/r/eduslate/workshop/search?p1_link_code=YJW03I2XFV&clear=1&cs=1iUy7mjiWvACVoZgdpIAochMU9QSxAf1VMMocPTHw0UW5BdloLd8yYaESC-2EKlGfB0rUx_ypN5g3ZbbtsYF-PA" target="_blank">View Classes</a>
+          </div>
+        </div>
+
+        <div class="discipline-card" data-locations="colorado-springs littleton mckinney">
+          <div class="discipline-cover">
+            <img src="images/classCoverImages/fixedlightingsmith.png" alt="Smithing" class="img-shift-down" />
+            <div class="discipline-cover-overlay">
+              <h3>Smithing</h3>
+            </div>
+          </div>
+          <div class="discipline-body">
+            <a href="https://www.kilroysworkshop.com/ords/r/eduslate/workshop/search?p1_link_code=Z3RGZHPKTF&clear=1&cs=1Fhq2JVNlopV218WKchAzubvE_rKkZC0Y5eNIEqaexogE-FRmvtJcjfELssZyofaq7MWTwDysOK_2aAxIA-g3kw" class="btn-secondary" data-fixed-href="https://www.kilroysworkshop.com/ords/r/eduslate/workshop/search?p1_link_code=Z3RGZHPKTF&clear=1&cs=1Fhq2JVNlopV218WKchAzubvE_rKkZC0Y5eNIEqaexogE-FRmvtJcjfELssZyofaq7MWTwDysOK_2aAxIA-g3kw" target="_blank">View Classes</a>
+          </div>
+        </div>
+
+        <div class="discipline-card" data-locations="colorado-springs littleton mckinney">
+          <div class="discipline-cover">
+            <img src="images/classCoverImages/shopclass2.jpg" alt="Shop Class" />
+            <div class="discipline-cover-overlay">
+              <h3>Shop Class</h3>
+            </div>
+          </div>
+          <div class="discipline-body">
+            <a href="https://www.kilroysworkshop.com/ords/r/eduslate/workshop/search?p1_link_code=P0GNCB2CX9&clear=1&cs=1jZrhmW1MdIcsSKA6CLJ52xiHsy-DjxiYuJdCeZfbShFMAjAq5azMu0nPKf_HK-iRuVtQLrDwWhK33DB9nx0eRA" class="btn-secondary" data-fixed-href="https://www.kilroysworkshop.com/ords/r/eduslate/workshop/search?p1_link_code=P0GNCB2CX9&clear=1&cs=1jZrhmW1MdIcsSKA6CLJ52xiHsy-DjxiYuJdCeZfbShFMAjAq5azMu0nPKf_HK-iRuVtQLrDwWhK33DB9nx0eRA" target="_blank">View Classes</a>
+          </div>
+        </div>
+
+        <div class="discipline-card" data-locations="colorado-springs mckinney">
+          <div class="discipline-cover">
+            <img src="images/kilroy_shop_pics/shopclass.jpeg" alt="Life Skills" />
+            <div class="discipline-cover-overlay">
+              <h3>Life Skills</h3>
+            </div>
+          </div>
+          <div class="discipline-body">
+            <a href="https://www.kilroysworkshop.com/ords/r/eduslate/workshop/search?p1_link_code=3JJWHIHXN8&clear=1&cs=1bcKWOaA6vECvPMgjT-KX_tj5PG3-fxNjKFoi5sWfCtIwqqoim8XTYCuJaMWHW65OFQSxfwlkCxj6uuWtG1h1wQ" class="btn-secondary" data-fixed-href="https://www.kilroysworkshop.com/ords/r/eduslate/workshop/search?p1_link_code=3JJWHIHXN8&clear=1&cs=1bcKWOaA6vECvPMgjT-KX_tj5PG3-fxNjKFoi5sWfCtIwqqoim8XTYCuJaMWHW65OFQSxfwlkCxj6uuWtG1h1wQ" target="_blank">View Classes</a>
+          </div>
+        </div>
+
+        <div class="discipline-card" data-locations="colorado-springs">
+          <div class="discipline-cover">
+            <img src="images/classCoverImages/manu&fab.jpeg" alt="Casting" />
+            <div class="discipline-cover-overlay">
+              <h3>Casting</h3>
+            </div>
+          </div>
+          <div class="discipline-body">
+            <a href="https://kilroysworkshop.com/ords/r/eduslate/workshop/search" class="btn-secondary" target="_blank">View Classes</a>
+          </div>
+        </div>
+
+        <div class="discipline-card" data-locations="mckinney">
+          <div class="discipline-cover">
+            <img src="images/kilroy_shop_pics/4BEB254C-A2E4-4C2E-AF48-5BA5EFEEC23D.JPG" alt="Artistic Design" style="object-position: center 70%;" />
+            <div class="discipline-cover-overlay">
+              <h3>Artistic Design</h3>
+            </div>
+          </div>
+          <div class="discipline-body">
+            <a href="https://www.kilroysworkshop.com/ords/r/eduslate/workshop/search?p1_link_code=OWLBC54XRE&clear=1&cs=1vgWQwLqOMjFt8hobj68jA20Q8fHzrT3zGpMcg6PCv3bX-zQZYXawm7LOZpje30edWGnAttQfGDfO-0paTyvQaA" class="btn-secondary" data-fixed-href="https://www.kilroysworkshop.com/ords/r/eduslate/workshop/search?p1_link_code=OWLBC54XRE&clear=1&cs=1vgWQwLqOMjFt8hobj68jA20Q8fHzrT3zGpMcg6PCv3bX-zQZYXawm7LOZpje30edWGnAttQfGDfO-0paTyvQaA" target="_blank">View Classes</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRADES STATS ===== -->
+  <section class="trades-stats-section">
+    <div class="container">
+      <p class="eyebrow">By The Numbers</p>
+      <h2>Trades Pay. Trades Grow. Trades Last.</h2>
+      <p class="section-sub">The data is clear — skilled trades are among the fastest-growing, highest-demand careers in America.</p>
+
+      <div class="trades-stat-row">
+        <div class="t-stat">
+          <span class="t-stat-num">$58K</span>
+          <span class="t-stat-label">median annual salary</span>
+        </div>
+        <div class="t-stat">
+          <span class="t-stat-num">7M+</span>
+          <span class="t-stat-label">unfilled jobs right now</span>
+        </div>
+        <div class="t-stat">
+          <span class="t-stat-num">$0</span>
+          <span class="t-stat-label">average student debt</span>
+        </div>
+        <div class="t-stat">
+          <span class="t-stat-num">11%</span>
+          <span class="t-stat-label">projected job growth</span>
+        </div>
+      </div>
+
+      <div class="trades-split">
+        <div class="trades-split-img">
+          <img src="images/kilroy_shop_pics/IMG_6176.jpg" alt="Trades training at Kilroy's" />
+        </div>
+        <div class="trades-split-copy">
+          <p class="eyebrow">Real Skills. Reliable Wages.</p>
+          <h3>Welders typically start at $20 to $25/hr. The trade is in high demand to replace a retiring workforce, and on-site physical labor is nearly impossible to outsource.</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHO WE SERVE ===== -->
+  <section id="serve" class="serve-section">
+    <div class="container">
+      <h2>For Ages 9–90.</h2>
+      <p class="section-sub">Because learning never ends. There is a place for you at 1848.</p>
+
+      <div class="serve-grid">
+
+        <div class="serve-card">
+          <div class="serve-cover">
+            <img src="images/ForAgesImages/students.jpg" alt="Students" />
+            <div class="serve-cover-overlay"><h4>Students</h4></div>
+          </div>
+          <div class="serve-body">
+            <p>Futureproof your career. Learn skills that matter. Build something real.</p>
+          </div>
+        </div>
+
+        <div class="serve-card">
+          <div class="serve-cover">
+            <img src="images/ForAgesImages/parents.jpg" alt="Special Needs" />
+            <div class="serve-cover-overlay"><h4>Special Needs</h4></div>
+          </div>
+          <div class="serve-body">
+            <p>Hands-on skills build confidence and independence for learners of every ability.</p>
+          </div>
+        </div>
+
+        <div class="serve-card">
+          <div class="serve-cover">
+            <img src="images/ForAgesImages/American_Veteran.jpg" alt="Veterans" />
+            <div class="serve-cover-overlay"><h4>Veterans</h4></div>
+          </div>
+          <div class="serve-body">
+            <p>Your service built discipline. 1848 builds the next chapter of your career.</p>
+          </div>
+        </div>
+
+        <div class="serve-card">
+          <div class="serve-cover">
+            <img src="images/ForAgesImages/careerchangerbetter.png" alt="Career Changers" />
+            <div class="serve-cover-overlay"><h4>Career Changers</h4></div>
+          </div>
+          <div class="serve-body">
+            <p>Pivot into a high-demand trade. New skills, new income, new purpose.</p>
+          </div>
+        </div>
+
+        <div class="serve-card">
+          <div class="serve-cover">
+            <img src="images/ForAgesImages/entrepreneur.jpg" alt="Entrepreneurs" />
+            <div class="serve-cover-overlay"><h4>Entrepreneurs</h4></div>
+          </div>
+          <div class="serve-body">
+            <p>Turn your craft into a business. 1848 teaches the skills and the strategy.</p>
+          </div>
+        </div>
+
+        <div class="serve-card">
+          <div class="serve-cover">
+            <img src="images/ForAgesImages/retirees.jpg" alt="Retirees" />
+            <div class="serve-cover-overlay"><h4>Retirees</h4></div>
+          </div>
+          <div class="serve-body">
+            <p>Experience meets new skills. Stay sharp, stay connected, stay purposeful.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMMUNITY STATEMENT ===== -->
+  <section class="community-section">
+    <div class="container">
+      <h2 class="community-headline">Community. Creativity. Capability.</h2>
+      <p class="community-body">
+        1848 is more than a trade school. It's a destination where people
+        <strong>Learn</strong>, <strong>Create</strong>, <strong>Build</strong>,
+        <strong>Teach</strong>, and <strong>Connect</strong> — for a lifetime.
+      </p>
+      <p class="community-brand">
+        1848 — Transforming hopelessness into purpose and helplessness into capability<br />
+        through Inspiration, Education, and Transformation.
+      </p>
+      <p class="community-tagline">Hope Has a Home. &nbsp;|&nbsp; Futureproof Your Career. &nbsp;|&nbsp; 1848.net</p>
+    </div>
+  </section>
+
+  <!-- ===== EVENTS ===== -->
+  <!-- events section hidden -->
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="contact" class="footer">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <img src="images/1848-logo.png" alt="1848" class="logo-img footer-logo-img" />
+        <p>Powered by Hope. Fueled by Technology.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="#classes">Classes</a></li>
+          <li><a href="#classes">Disciplines</a></li>
+          <li><a href="https://kilroysworkshop.com" target="_blank">Kilroy's Workshop</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#employers">For Employers</a></li>
+          <li><a href="#invest">For Investors</a></li>
+          <li><a href="#employers">Civic Leaders</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>About</h4>
+        <ul>
+          <li><a href="https://a.co/d/02BtQ1rS" target="_blank">Our Book</a></li>
+          <li><a href="https://tinyurl.com/1848Music" target="_blank">Our Music</a></li>
+          <li><a href="https://amfol.org" target="_blank">AMFOL</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><a href="tel:2144259272">214-425-9272</a></p>
+        <p><a href="mailto:Steveb@1848.net">Steveb@1848.net</a></p>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 1848. All rights reserved. &nbsp;|&nbsp; <a href="https://1848.net" target="_blank">1848.net</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
