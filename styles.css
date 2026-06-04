@@ -292,7 +292,7 @@ a { color: inherit; text-decoration: none; }
 .classes-section h2 {
   font-size: clamp(1.8rem, 4vw, 2.6rem);
   font-weight: 800;
-  color: var(--navy);
+  color: var(--blue);
   margin-bottom: 12px;
 }
 
@@ -509,14 +509,15 @@ a { color: inherit; text-decoration: none; }
 /* ===== WHO WE SERVE ===== */
 .serve-section {
   background: var(--black);
-  padding: 80px 0;
+  padding: 90px 0;
   text-align: center;
 }
 
 .serve-section h2 {
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-  font-weight: 800;
-  color: var(--navy);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  color: var(--blue);
+  letter-spacing: 0.04em;
   margin-bottom: 12px;
 }
 
@@ -588,7 +589,7 @@ a { color: inherit; text-decoration: none; }
 .trades-stats-section h2 {
   font-size: clamp(1.8rem, 4vw, 2.6rem);
   font-weight: 800;
-  color: var(--navy);
+  color: var(--blue);
 }
 
 .trades-stat-row {
@@ -991,7 +992,7 @@ a { color: inherit; text-decoration: none; }
 .community-headline {
   font-size: clamp(2rem, 5vw, 3.4rem);
   font-weight: 900;
-  color: var(--navy);
+  color: var(--blue);
   letter-spacing: 0.04em;
   margin-bottom: 24px;
 }
@@ -1031,7 +1032,7 @@ a { color: inherit; text-decoration: none; }
 .events-section h2 {
   font-size: 2rem;
   font-weight: 800;
-  color: var(--navy);
+  color: var(--blue);
   margin-bottom: 10px;
 }
 
@@ -1267,6 +1268,26 @@ a { color: inherit; text-decoration: none; }
 .photo-strip__item:hover img { transform: scale(1.04); }
 @media (max-width: 700px) {
   .photo-strip { grid-template-columns: repeat(2, 1fr); height: 320px; }
+}
+
+/* ===== SERVE SECTION: PHOTO ROW ===== */
+.serve-photo-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin: 48px 0;
+}
+.serve-photo-row__img { overflow: hidden; }
+.serve-photo-row__img img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+@media (max-width: 700px) {
+  .serve-photo-row { grid-template-columns: repeat(2, 1fr); }
+  .serve-photo-row__img img { height: 220px; }
 }
 
 /* ===== DONATE PAGE: PORTRAIT PULL ===== */
