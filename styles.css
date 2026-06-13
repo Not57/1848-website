@@ -76,6 +76,33 @@ a { color: inherit; text-decoration: none; }
   text-align: center;
 }
 
+/* ===== STUDENTS TICKER ===== */
+.students-ticker {
+  background: var(--accent);
+  color: var(--navy);
+  text-align: center;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.ticker-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.ticker-number {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 2.6rem;
+  line-height: 1;
+}
+
 /* ===== NAVBAR — stays dark so white logo is visible ===== */
 .navbar {
   position: sticky;
