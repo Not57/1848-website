@@ -171,6 +171,35 @@ a { color: inherit; text-decoration: none; }
 
 .hero--compact { min-height: 60vh; }
 
+/* suppress single-image ::before on mosaic hero */
+.hero--mosaic::before { background: none; }
+
+.hero-mosaic {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 50%);
+  height: 100%;
+  filter: grayscale(100%);
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-mosaic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .hero-mosaic {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
+
 .hero::before {
   content: '';
   position: absolute;
@@ -241,7 +270,14 @@ a { color: inherit; text-decoration: none; }
 
 /* ===== DONATE PAGE HERO ===== */
 .hero--donate::before {
-  background-image: url('images/sunset-over-plains-stockcake.webp');
+  background-image: url('images/welders-blog-1080x608.jpg');
+  background-position: center center;
+  filter: none;
+}
+
+/* ===== INVEST PAGE HERO ===== */
+.hero--invest::before {
+  background-image: url('images/kilroy_shop_pics/ronatwork.jpg');
   background-position: center center;
   filter: none;
 }
@@ -1026,14 +1062,54 @@ a { color: inherit; text-decoration: none; }
   font-weight: 900;
   color: var(--blue);
   letter-spacing: 0.04em;
-  margin-bottom: 24px;
+  margin-bottom: 48px;
+}
+
+.community-layout {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  text-align: center;
+}
+
+.community-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.community-img-wrap {
+  flex: 0 0 420px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.community-img-wrap img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 4px;
+}
+
+@media (max-width: 860px) {
+  .community-layout {
+    flex-direction: column;
+    gap: 32px;
+    text-align: center;
+  }
+  .community-img-wrap {
+    flex: none;
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+  }
 }
 
 .community-body {
   font-size: clamp(1rem, 2vw, 1.25rem);
   color: var(--text);
-  max-width: 640px;
-  margin: 0 auto 28px;
+  margin: 0 0 28px;
   line-height: 1.7;
 }
 .community-body strong { color: var(--accent); }
@@ -1041,8 +1117,7 @@ a { color: inherit; text-decoration: none; }
 .community-brand {
   font-size: 0.95rem;
   color: var(--text);
-  max-width: 600px;
-  margin: 0 auto 16px;
+  margin: 0 0 16px;
   line-height: 1.8;
 }
 
@@ -1467,3 +1542,15 @@ a { color: inherit; text-decoration: none; }
   .collage-img { position:static; width:100%; height:150px; transform:none !important; }
   .collage-img--15 { grid-column:1 / -1; height:165px; }
 }
+
+
+/* ===== STATS SOURCE FOOTNOTE ===== */
+.stats-source {
+  font-size: 0.78rem;
+  color: var(--text);
+  opacity: 0.6;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 32px;
+}
+.stats-source a { color: var(--accent); }
