@@ -884,6 +884,46 @@ a { color: inherit; text-decoration: none; }
   border-top: 1px solid var(--mid);
 }
 
+.invest-section--mosaic {
+  position: relative;
+  background: none;
+  border-top: none;
+  overflow: hidden;
+}
+
+.invest-section--mosaic .invest-mosaic {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 33.333%);
+  height: 100%;
+  filter: grayscale(100%);
+}
+
+.invest-section--mosaic .invest-mosaic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.invest-section--mosaic .invest-mosaic-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+.invest-section__content {
+  position: relative;
+  z-index: 2;
+}
+
+.invest-section--mosaic .section-sub {
+  color: rgba(255, 255, 255, 0.85);
+}
+
 .invest-section--top {
   padding-top: 140px;
   border-top: none;
@@ -892,7 +932,7 @@ a { color: inherit; text-decoration: none; }
 .invest-section h2 {
   font-size: clamp(1.8rem, 4vw, 2.6rem);
   font-weight: 800;
-  color: var(--blue);
+  color: #fff;
   margin-bottom: 12px;
 }
 
@@ -1485,62 +1525,11 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ===== DONATE PAGE: IMPACT GALLERY ===== */
-.impact-gallery {
-  background: var(--black);
-  padding: 64px 0 96px;
-  overflow: hidden;
-}
-.impact-gallery > .container {
-  max-width: 1420px;
-  padding: 0 30px;
-}
-.impact-gallery__eyebrow {
-  text-align: center;
-  font-size: 1.2rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--blue);
-  margin-bottom: 56px;
-}
-.impact-collage {
-  position: relative;
-  height: 580px;
-  width: 100%;
-}
-.collage-img {
-  position: absolute;
-  object-fit: cover;
-  border: 4px solid #fff;
-  box-shadow: 0 8px 28px rgba(0,0,0,0.55);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  z-index: 1;
-}
-.collage-img:hover {
-  z-index: 10;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.7);
-  transform: scale(1.05) rotate(0deg) !important;
-}
-/* Row 1 — step ~170px */
-.collage-img--1  { width:231px; height:214px; top:15px;  left:0;      transform:rotate(-3deg);   z-index:2; }
-.collage-img--2  { width:215px; height:200px; top:5px;   left:172px;  transform:rotate(2.5deg);  z-index:3; }
-.collage-img--3  { width:226px; height:210px; top:22px;  left:344px;  transform:rotate(-1.5deg); z-index:2; }
-.collage-img--4  { width:211px; height:198px; top:8px;   left:516px;  transform:rotate(3deg);    z-index:3; }
-.collage-img--5  { width:220px; height:207px; top:18px;  left:688px;  transform:rotate(-2.5deg); z-index:2; }
-.collage-img--6  { width:209px; height:196px; top:6px;   left:860px;  transform:rotate(1.5deg);  z-index:3; }
-.collage-img--7  { width:215px; height:204px; top:20px;  left:1032px; transform:rotate(4deg);    z-index:2; }
-.collage-img--8  { width:204px; height:190px; top:10px;  left:1198px; transform:rotate(-1deg);   z-index:3; }
-/* Row 2 — step ~185px */
-.collage-img--9  { width:226px; height:207px; top:310px; left:0;      transform:rotate(2.5deg);  z-index:2; }
-.collage-img--10 { width:212px; height:198px; top:298px; left:187px;  transform:rotate(-2deg);   z-index:3; }
-.collage-img--11 { width:226px; height:209px; top:315px; left:374px;  transform:rotate(1deg);    z-index:2; }
-.collage-img--12 { width:215px; height:200px; top:302px; left:561px;  transform:rotate(-3deg);   z-index:3; }
-.collage-img--13 { width:220px; height:204px; top:312px; left:748px;  transform:rotate(2deg);    z-index:2; }
-.collage-img--14 { width:207px; height:193px; top:296px; left:930px;  transform:rotate(-1.5deg); z-index:3; }
-.collage-img--15 { width:196px; height:185px; top:310px; left:1112px; transform:rotate(3.5deg);  z-index:2; }
 @media (max-width: 700px) {
-  .impact-collage { position:static; height:auto; display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-  .collage-img { position:static; width:100%; height:150px; transform:none !important; }
-  .collage-img--15 { grid-column:1 / -1; height:165px; }
+  .invest-section--mosaic .invest-mosaic {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+  }
 }
 
 
