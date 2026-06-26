@@ -272,7 +272,7 @@ a { color: inherit; text-decoration: none; }
 .hero--donate::before {
   background-image: url('images/welders-blog-1080x608.jpg');
   background-position: center center;
-  filter: none;
+  filter: grayscale(100%);
 }
 
 /* ===== INVEST PAGE HERO ===== */
@@ -662,8 +662,8 @@ a { color: inherit; text-decoration: none; }
 }
 
 .trades-stat-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  justify-content: center;
   gap: 16px;
   margin: 40px 0;
 }
@@ -676,6 +676,7 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid var(--mid);
   padding: 28px 20px;
   text-align: center;
+  flex: 0 1 220px;
 }
 
 .t-stat-num {
@@ -955,7 +956,7 @@ a { color: inherit; text-decoration: none; }
   padding: 36px 32px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 14px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.06);
 }
