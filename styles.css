@@ -1506,3 +1506,262 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 32px;
 }
 .stats-source a { color: var(--accent); }
+
+/* ===== SPONSOR PAGE ===== */
+.hero--sponsor::before {
+  background-image: url('images/welders2.jpeg');
+  background-position: center center;
+  filter: grayscale(100%);
+}
+
+.match-banner {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  max-width: 760px;
+  margin: 0 auto 48px;
+  text-align: left;
+}
+.match-banner__tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--accent);
+  padding: 6px 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.match-banner p {
+  font-size: 0.98rem;
+  color: var(--text);
+  margin: 0;
+  flex: 1;
+  min-width: 240px;
+}
+
+.tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  text-align: left;
+  align-items: stretch;
+}
+
+.tier-card {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--mid);
+  border-top: 4px solid var(--accent);
+  border-radius: 0 0 8px 8px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.tier-card--featured {
+  border-color: var(--accent);
+  border-top-width: 4px;
+  box-shadow: 0 8px 28px rgba(212,154,30,0.22);
+}
+
+
+.tier-badge {
+  position: absolute;
+  top: -13px;
+  left: 28px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--accent);
+  padding: 6px 14px;
+  border-radius: 4px;
+}
+
+.tier-card__head {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.tier-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--blue);
+}
+.tier-price {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.tier-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+.tier-card ul li {
+  font-size: 0.92rem;
+  color: var(--text);
+  line-height: 1.6;
+  padding-left: 20px;
+  position: relative;
+}
+.tier-card ul li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.tier-card .btn-primary { align-self: flex-start; }
+
+/* Naming rights */
+.naming-section { text-align: center; }
+.naming-block {
+  max-width: 640px;
+  margin: 0 auto;
+}
+.naming-block h2 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 800;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+.naming-figure {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(2.6rem, 7vw, 4rem);
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 18px;
+}
+.naming-copy {
+  color: var(--text);
+  font-size: 1.02rem;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 600px) {
+  .match-banner { padding: 16px 18px; }
+}
+
+/* ===== SPONSOR — NAMING AVAILABILITY ===== */
+.naming-availability {
+  font-size: 1rem;
+  color: var(--blue);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.naming-availability strong { color: var(--accent); }
+
+/* ===== SPONSOR — OPEN HOUSE ===== */
+.openhouse-section {
+  background: var(--dark);
+  padding: 80px 0;
+  border-top: 1px solid var(--mid);
+  text-align: center;
+}
+.openhouse-section h2 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 800;
+  color: var(--blue);
+  margin-bottom: 14px;
+}
+.openhouse-lead {
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 620px;
+  margin: 0 auto 44px;
+}
+.openhouse-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  text-align: left;
+}
+@media (max-width: 700px) {
+  .openhouse-grid { grid-template-columns: 1fr; }
+}
+.openhouse-card {
+  background: var(--white);
+  border: 1px solid var(--mid);
+  border-top: 4px solid var(--accent);
+  border-radius: 0 0 8px 8px;
+  padding: 32px 28px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.openhouse-card--vip {
+  border-top-color: var(--accent);
+}
+.openhouse-date {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.openhouse-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 16px;
+}
+.openhouse-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.openhouse-card ul li {
+  font-size: 0.92rem;
+  color: var(--text);
+  padding-left: 20px;
+  position: relative;
+}
+.openhouse-card ul li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+.openhouse-note {
+  font-size: 0.85rem;
+  color: var(--text);
+  font-style: italic;
+  border-top: 1px solid var(--mid);
+  padding-top: 14px;
+}
+
+/* ===== SPONSOR — AMERICA'S FAMILY FOOTNOTE ===== */
+.amfol-footnote {
+  background: var(--black);
+  padding: 32px 0;
+  border-top: 1px solid var(--mid);
+}
+.amfol-footnote p {
+  font-size: 0.85rem;
+  color: var(--text);
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.amfol-footnote a { color: var(--accent); text-decoration: underline; }

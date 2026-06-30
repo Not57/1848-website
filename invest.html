@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>1848 — Invest in Trades Education</title>
+  <title>1848 — Sponsor a Student</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
@@ -19,81 +19,147 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="index.html#classes">Classes</a></li>
       <li><a href="donate.html">Learn More</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="#contact">Contact</a></li>
       <li><a href="invest.html" class="btn-donate">Invest</a></li>
     </ul>
     <button class="nav-toggle" onclick="toggleMenu()">☰</button>
   </nav>
 
-  <!-- ===== FOR INVESTORS & DONORS ===== -->
-  <section id="invest" class="invest-section invest-section--mosaic">
-    <div class="invest-mosaic">
-      <img src="images/yourdonoatwork/430095832_3885520931710548_4344374178171715115_n.jpg" alt="" />
-      <img src="images/yourdonoatwork/instructor.jpg" alt="" />
-      <img src="images/yourdonoatwork/IMG_4225.jpg" alt="" />
-      <img src="images/kilroy_shop_pics/ronatwork.jpg" alt="" />
-      <img src="images/yourdonoatwork/shopclass.jpeg" alt="" />
-      <img src="images/kilroy_shop_pics/youngwelder.JPG" alt="" />
-      <img src="images/yourdonoatwork/IMG_7165.jpg" alt="" />
-      <img src="images/yourdonoatwork/hatkid.jpg" alt="" />
-      <img src="images/yourdonoatwork/tuff.jpg" alt="" />
-      <img src="images/yourdonoatwork/IMG_6173.jpg" alt="" />
-      <img src="images/kilroy_shop_pics/weldinggroup.jpeg" alt="" />
-      <img src="images/yourdonoatwork/IMG_8923.jpg" alt="" />
-      <img src="images/yourdonoatwork/IMG_9551.jpeg" alt="" />
-      <img src="images/yourdonoatwork/ABBEB32E-3891-4063-9984-10EE7D81F343_1_105_c.jpeg" alt="" />
-      <img src="images/kilroy_shop_pics/family.JPG" alt="" />
+  <!-- ===== HERO ===== -->
+  <section class="hero hero--compact hero--sponsor">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Forging Adversity into Opportunity</p>
+      <h1 class="hero-tagline">Forge a Future.<br><strong>Sponsor a Student.</strong></h1>
+      <p class="hero-sub">Your gift puts a student in the shop, in front of the fire, and on a path to a real career.</p>
+      <div class="donate-hero-btns">
+        <a href="#tiers" class="btn-primary">See Giving Tiers</a>
+      </div>
     </div>
-    <div class="invest-mosaic-overlay"></div>
-    <div class="container invest-section__content">
-      <h2>Invest in What Works.</h2>
-      <p class="section-sub">Your investment goes directly to scholarships for students. There is currently a <strong>$100,000 matching grant</strong> for all investments.</p>
+  </section>
 
-      <div class="invest-grid">
+  <!-- ===== GIVING TIERS ===== -->
+  <section id="tiers" class="pillars-section">
+    <div class="container">
 
-        <div class="invest-card">
-          <h3>For Investors</h3>
-          <p>America faces a national security crisis hiding in plain sight — 2.1 million skilled trades jobs sit unfilled today, and by 2030 that number doubles to 4.3 million. For every 2 workers entering the trades, 5 are leaving. 1848 is the comprehensive solution: a proven, scalable system leveraging hands-on training, technology, and purpose-driven mentorship to forge the next generation of skilled workers. Your investment fuels an already existing fire.</p>
-          <a href="mailto:Steveb@1848.net" class="btn-primary">Connect With Us</a>
+      <!-- Matching-grant banner -->
+      <div class="match-banner">
+        <span class="match-banner__tag">Matching Grant Active</span>
+        <p>Every dollar is doubled — there is currently a <strong>$100,000 matching grant</strong> for all gifts. Your sponsorship goes twice as far.</p>
+      </div>
+
+      <h2>Choose Your Impact</h2>
+
+      <div class="tiers-grid">
+
+        <!-- Inspire -->
+        <div class="tier-card">
+          <div class="tier-card__head">
+            <h3>Inspire</h3>
+            <p class="tier-price">$99</p>
+          </div>
+          <ul>
+            <li>Sponsors 2 students with a free blacksmithing class</li>
+            <li>An 1848 t-shirt and hat</li>
+            <li>Signed copy of <em>What Is 1848</em></li>
+            <li>Your personalized virtual plaque on our website</li>
+            <li>VIP invite to our open house events</li>
+          </ul>
+          <a href="https://amfol.org/donate" class="btn-primary" target="_blank">Sponsor for $99</a>
         </div>
 
-        <div class="invest-card">
-          <h3>For Donors &amp; Philanthropists</h3>
-          <p>1848 is part of <a href="https://amfol.org" target="_blank">America's Family (amfol.org)</a>, a registered 501(c)(3). At 1848, we offer a variety of investment opportunities — every dollar goes directly to helping a student via scholarships.</p>
-          <ul>
-            <li>Build communities</li>
-            <li>Strengthen families</li>
-            <li>Generate measurable impact</li>
-          </ul>
-          <div class="amfol-notice">
-            <a href="https://amfol.org/donate/" class="btn-primary" target="_blank">Invest Now</a>
-            <a href="https://amfol.org" target="_blank"><img src="images/af-jpeglogo-YbN4DPb6oaSVZaBZ.avif" alt="America's Family" class="amfol-logo" /></a>
+        <!-- Train -->
+        <div class="tier-card">
+          <div class="tier-card__head">
+            <h3>Train</h3>
+            <!-- TODO: confirm Train price — notes say "around $1,000" -->
+            <p class="tier-price">$1,000</p>
           </div>
+          <ul>
+            <li>Funds a full week of classes across multiple disciplines for one student</li>
+            <li>A commemorative 1848 challenge coin</li>
+            <li>Signed copy of <em>What Is 1848</em></li>
+            <li>Your personalized virtual plaque on our website</li>
+            <li>VIP invite to our open house events</li>
+          </ul>
+          <a href="https://amfol.org/donate" class="btn-primary" target="_blank">Sponsor for $1,000</a>
+        </div>
+
+        <!-- Transformation (highlighted) -->
+        <div class="tier-card tier-card--featured">
+          <span class="tier-badge">Most Impact</span>
+          <div class="tier-card__head">
+            <h3>Transformation</h3>
+            <p class="tier-price">$4,900</p>
+          </div>
+          <ul>
+            <li>Puts 2 students through full welding certification</li>
+            <li>Students earn their welding certificates — a real career transformation</li>
+            <li>Your own engraved stainless steel plaque on the recognition wall in the workshop</li>
+            <li>Signed copy of <em>What Is 1848</em></li>
+            <li>Your personalized virtual plaque on our website</li>
+            <li>VIP invite to our open house events</li>
+            <li>Progress updates, plus a personal letter and photo from the students you sponsored</li>
+          </ul>
+          <a href="https://amfol.org/donate" class="btn-primary" target="_blank">Sponsor for $4,900</a>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ===== BY THE NUMBERS ===== -->
-  <section class="trades-stats-section">
+  <!-- ===== NAMING RIGHTS ===== -->
+  <section class="featured-section naming-section">
     <div class="container">
-      <p class="eyebrow">By The Numbers</p>
-      <h2>Your Investment Builds the Workforce America Needs.</h2>
-      <div class="trades-stat-row">
-        <div class="t-stat">
-          <span class="t-stat-num">2.1M</span>
-          <span class="t-stat-label">skilled trades jobs unfilled today</span>
+      <div class="naming-block">
+        <p class="eyebrow">Leave a Lasting Legacy</p>
+        <h2>Forge Your Future<br>Scholarship Naming Rights</h2>
+        <p class="naming-figure">$184,800</p>
+        <p class="naming-availability"><strong>Only 4 locations remaining.</strong> Naming rights are specific to each of our 5 locations — and Colorado Springs has already been spoken for by a founding family.</p>
+        <p class="naming-copy">Put your name — or your family's, your company's, or a loved one's — on the makerspace that transforms lives in your community. The single most enduring way to invest in the next generation of American makers.</p>
+        <a href="mailto:Steveb@1848.net" class="btn-primary">Claim a Location</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== OPEN HOUSE ===== -->
+  <section class="openhouse-section">
+    <div class="container">
+      <p class="eyebrow">Come See It For Yourself</p>
+      <h2>You're Invited to the Shop</h2>
+      <p class="openhouse-lead">Every donor — at every tier — gets a VIP invitation to our grand opening on <strong>August 2nd</strong>. Then we open the doors to the public every Saturday in August.</p>
+
+      <div class="openhouse-grid">
+        <div class="openhouse-card openhouse-card--vip">
+          <p class="openhouse-date">August 2 · VIP Night</p>
+          <h3>Grand Opening Open House</h3>
+          <ul>
+            <li>Unveiling of the plaque wall</li>
+            <li>Watch a copper rose forged live</li>
+            <li>See our new technology in action</li>
+            <li>Food and drinks</li>
+          </ul>
+          <p class="openhouse-note">Exclusive to donors — your VIP invite is included with every gift, no matter the tier.</p>
         </div>
-        <div class="t-stat">
-          <span class="t-stat-num">5:2</span>
-          <span class="t-stat-label">workers leaving for every 2 entering</span>
-        </div>
-        <div class="t-stat">
-          <span class="t-stat-num">4.3M</span>
-          <span class="t-stat-label">projected shortage by 2030</span>
+        <div class="openhouse-card">
+          <p class="openhouse-date">Every Saturday in August</p>
+          <h3>Public Open Houses</h3>
+          <ul>
+            <li>Open to everyone</li>
+            <li>Hands-on forge experiences</li>
+            <li>Meet our students and instructors</li>
+            <li>Tour the makerspace</li>
+          </ul>
+          <p class="openhouse-note">Free and open to the public, all month long.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ===== AMERICA'S FAMILY FOOTNOTE ===== -->
+  <section class="amfol-footnote">
+    <div class="container">
+      <p>1848 is a marquee program of <a href="https://amfol.org" target="_blank">America's Family</a>, a registered 501(c)(3). Every dollar goes directly to helping a student via scholarships.</p>
     </div>
   </section>
 
@@ -119,7 +185,7 @@
         <h4>Connect</h4>
         <ul>
           <li><a href="donate.html#employers">For Employers</a></li>
-          <li><a href="invest.html#invest">For Investors</a></li>
+          <li><a href="invest.html#tiers">Sponsor a Student</a></li>
           <li><a href="donate.html#employers">Civic Leaders</a></li>
         </ul>
       </div>
