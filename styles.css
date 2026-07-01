@@ -663,6 +663,7 @@ a { color: inherit; text-decoration: none; }
 
 .trades-stat-row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 16px;
   margin: 40px 0;
@@ -725,8 +726,20 @@ a { color: inherit; text-decoration: none; }
 
 
 @media (max-width: 860px) {
-  .trades-stat-row { grid-template-columns: repeat(2, 1fr); }
   .trades-split { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .trades-stat-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .t-stat {
+    flex: 1 1 auto;
+    width: 100%;
+    padding: 20px 16px;
+  }
 }
 
 /* ===== FOR EMPLOYERS ===== */
