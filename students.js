@@ -14,7 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!res.ok) throw new Error('students.json ' + res.status);
       return res.json();
     })
-    .then((students) => {
+    .then((data) => {
+      // The file is { "students": [...] } — Decap CMS cannot edit a bare
+      // top-level array. The Array.isArray branch keeps a stale cached copy
+      // of the old shape rendering instead of blanking the gallery.
+      const students = Array.isArray(data) ? data : data.students || [];
       students.forEach(checkPrivacy);
 
       const id = new URLSearchParams(window.location.search).get('id');
@@ -40,8 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Minor privacy defaults are enforced here, not by trusting whoever adds a student.
-// Full last names and exact ages never render, even if someone puts them in the JSON.
+// Backstop for hand edits. The CMS form at /admin/ is the primary guard — it has
+// no last-name field and no free-text age box — but the JSON can still be edited
+// directly, so full last names and exact ages are dropped here too.
 function checkPrivacy(s) {
   if (s.lastName) {
     console.warn(`[students] "lastName" on ${s.id} was ignored — use "lastInitial" only.`);
@@ -57,6 +62,16 @@ function displayName(s) {
 
 function formatCost(cost) {
   return typeof cost === 'number' ? '$' + cost.toLocaleString('en-US') : '';
+}
+
+// Total is always summed from needs[], never stored, so it cannot drift out of
+// sync with the line items. classCost is the pre-Week-10 shape, kept so older
+// records still show a number.
+function totalNeed(s) {
+  if (Array.isArray(s.needs) && s.needs.length) {
+    return s.needs.reduce((sum, n) => sum + (Number(n.amount) || 0), 0);
+  }
+  return Number(s.classCost) || 0;
 }
 
 function renderGallery(students, gallery) {
@@ -104,8 +119,17 @@ function renderGallery(students, gallery) {
 
     const wants = document.createElement('p');
     wants.className = 'student-card__class';
-    wants.textContent = 'Wants to take: ' + (s.classWanted || '');
+    wants.textContent = [s.trade, s.campus].filter(Boolean).join(' · ');
     body.appendChild(wants);
+
+    const total = totalNeed(s);
+    if (total) {
+      const amount = document.createElement('p');
+      amount.className = 'student-card__amount';
+      amount.textContent =
+        (s.status === 'funded' ? 'Funded: ' : 'Needs ') + formatCost(total);
+      body.appendChild(amount);
+    }
 
     const cta = document.createElement('span');
     cta.className = 'student-card__link';
@@ -169,22 +193,35 @@ function renderDetail(s, detail, gallery) {
 
   const facts = document.createElement('ul');
   facts.className = 'student-detail__facts';
-  addFact(facts, 'Class', s.classWanted);
-  addFact(facts, 'Cost to sponsor', formatCost(s.classCost));
+  addFact(facts, 'Trade', s.trade);
+  addFact(facts, 'Campus', s.campus);
+  addFact(facts, 'Program', s.classWanted);
   text.appendChild(facts);
+
+  if (Array.isArray(s.certifications) && s.certifications.length) {
+    const certLabel = document.createElement('p');
+    certLabel.className = 'student-detail__certs-label';
+    certLabel.textContent = 'Certifications they will earn';
+    text.appendChild(certLabel);
+
+    const certs = document.createElement('ul');
+    certs.className = 'student-certs';
+    s.certifications.forEach((c) => {
+      const li = document.createElement('li');
+      li.textContent = c;
+      certs.appendChild(li);
+    });
+    text.appendChild(certs);
+  }
 
   const story = document.createElement('div');
   story.className = 'student-detail__story';
-  String(s.story || '')
-    .split('\n')
-    .map((p) => p.trim())
-    .filter(Boolean)
-    .forEach((para) => {
-      const p = document.createElement('p');
-      p.textContent = para;
-      story.appendChild(p);
-    });
+  paragraphs(s.story).forEach((p) => story.appendChild(p));
   text.appendChild(story);
+
+  addSection(text, "Where They're Headed", s.aspiration);
+  renderNeeds(text, s);
+  addSection(text, 'What This Changes', s.impact);
 
   if (s.status === 'funded') {
     const done = document.createElement('p');
@@ -217,6 +254,79 @@ function renderDetail(s, detail, gallery) {
 
   wrap.appendChild(text);
   detail.appendChild(wrap);
+}
+
+// Story, aspiration, and impact are all multi-paragraph free text entered in the
+// CMS. Blank lines separate paragraphs.
+function paragraphs(str) {
+  return String(str || '')
+    .split('\n')
+    .map((p) => p.trim())
+    .filter(Boolean)
+    .map((para) => {
+      const p = document.createElement('p');
+      p.textContent = para;
+      return p;
+    });
+}
+
+function addSection(parent, heading, body) {
+  if (!body) return;
+  const section = document.createElement('div');
+  section.className = 'student-detail__section';
+  const h = document.createElement('h3');
+  h.textContent = heading;
+  section.appendChild(h);
+  paragraphs(body).forEach((p) => section.appendChild(p));
+  parent.appendChild(section);
+}
+
+// Itemized need, so a donor can cover one line instead of the whole amount.
+function renderNeeds(parent, s) {
+  const total = totalNeed(s);
+  if (!total) return;
+
+  const section = document.createElement('div');
+  section.className = 'student-detail__section';
+
+  const h = document.createElement('h3');
+  h.textContent = 'What They Need Funded';
+  section.appendChild(h);
+
+  const table = document.createElement('ul');
+  table.className = 'student-needs';
+
+  (s.needs || []).forEach((n) => {
+    const li = document.createElement('li');
+    const label = document.createElement('span');
+    label.textContent = n.label || '';
+    const amount = document.createElement('span');
+    amount.textContent = formatCost(Number(n.amount) || 0);
+    li.appendChild(label);
+    li.appendChild(amount);
+    table.appendChild(li);
+  });
+
+  const totalRow = document.createElement('li');
+  totalRow.className = 'student-needs__total';
+  const totalLabel = document.createElement('span');
+  totalLabel.textContent = 'Total';
+  const totalAmount = document.createElement('span');
+  totalAmount.textContent = formatCost(total);
+  totalRow.appendChild(totalLabel);
+  totalRow.appendChild(totalAmount);
+  table.appendChild(totalRow);
+
+  section.appendChild(table);
+
+  if (s.status !== 'funded') {
+    const note = document.createElement('p');
+    note.className = 'student-needs__note';
+    note.textContent = 'You can cover any part of this, or all of it.';
+    section.appendChild(note);
+  }
+
+  parent.appendChild(section);
 }
 
 function addFact(list, label, value) {

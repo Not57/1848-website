@@ -1,0 +1,143 @@
+# Decap CMS configuration for the sponsor-a-student page.
+#
+# The form defined here is the only way non-technical staff should edit
+# students/students.json. The field list is also the privacy guard: there is no
+# last-name field and no free-text age box, so those values cannot be entered
+# even by accident.
+#
+# See admin/README.md for how to use it, and for the one-time OAuth setup.
+
+backend:
+  name: github
+  repo: Not57/1848-website
+  branch: main
+  # OAuth proxy. GitHub Pages cannot hold a client secret, so the token exchange
+  # runs on a Cloudflare Worker. Replace this placeholder with the worker URL —
+  # login will not work until you do. Setup steps are in admin/README.md.
+  base_url: https://REPLACE-ME.workers.dev
+
+media_folder: "images/students"
+public_folder: "/images/students"
+
+collections:
+  - name: students
+    label: Students
+    files:
+      - name: profiles
+        label: Student Profiles
+        file: students/students.json
+        format: json
+        fields:
+          - name: students
+            label: Students
+            label_singular: Student
+            widget: list
+            summary: "{{fields.firstName}} {{fields.lastInitial}} — {{fields.trade}} ({{fields.campus}})"
+            fields:
+              - name: firstName
+                label: "First name"
+                widget: string
+
+              # Deliberately an initial, never a full last name. Most of these
+              # students are minors.
+              - name: lastInitial
+                label: "Last initial"
+                widget: string
+                pattern: ['^[A-Z]\.$', "One capital letter and a period, like B."]
+
+              - name: id
+                label: "Web link name"
+                widget: string
+                hint: "Lowercase, dashes, no spaces. Becomes 1848.net/students.html?id=this"
+                pattern: ['^[a-z0-9-]+$', "Lowercase letters, numbers, and dashes only"]
+
+              - name: photo
+                label: Photo
+                widget: image
+                hint: "Roughly 4:3, wider than tall. The student working, face visible."
+
+              # A range, never an exact age.
+              - name: ageRange
+                label: "Age range"
+                widget: select
+                options: ["14–15", "16–18", "18–20", "20–24", "25+"]
+
+              - name: city
+                label: "Where they live"
+                widget: string
+                hint: "City and state. Never a street address."
+
+              - name: campus
+                label: "Campus where they'll train"
+                widget: select
+                options: ["McKinney, TX", "Colorado Springs, CO"]
+
+              - name: trade
+                label: Trade
+                widget: select
+                options:
+                  - Welding
+                  - Electrical
+                  - Plumbing
+                  - HVAC
+                  - Construction
+                  - Blacksmithing
+                  - Machining
+
+              - name: classWanted
+                label: "Specific class or program"
+                widget: string
+
+              - name: certifications
+                label: "Certifications they'll earn"
+                widget: list
+                field: { name: cert, label: Certification, widget: string }
+
+              - name: oneLineNeed
+                label: "One-line summary"
+                widget: string
+                hint: "One sentence. This is what shows on the gallery card."
+
+              - name: story
+                label: "Their story and what they've overcome"
+                widget: text
+                hint: "Leave a blank line between paragraphs."
+
+              - name: aspiration
+                label: "Their dreams and career goals"
+                widget: text
+
+              - name: impact
+                label: "What their success changes for their family and community"
+                widget: text
+
+              # Itemized so a donor can cover one line instead of the whole
+              # amount. The site sums these — never type a total anywhere.
+              - name: needs
+                label: "What they need funded"
+                label_singular: "Need"
+                widget: list
+                summary: "{{fields.label}} — ${{fields.amount}}"
+                fields:
+                  - name: label
+                    label: "Type of need"
+                    widget: select
+                    options:
+                      - Tuition
+                      - Tools and gear
+                      - Transportation
+                      - Housing
+                      - Emergency assistance
+                  - name: amount
+                    label: "Dollars"
+                    widget: number
+                    value_type: int
+                    min: 1
+
+              - name: status
+                label: Status
+                widget: select
+                default: active
+                options:
+                  - { label: "Still needs a sponsor", value: active }
+                  - { label: "Fully sponsored", value: funded }

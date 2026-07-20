@@ -1889,6 +1889,12 @@ a { color: inherit; text-decoration: none; }
   color: var(--blue);
   margin-top: auto;
 }
+.student-card__amount {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--blue);
+  padding-top: 4px;
+}
 .student-card__link {
   font-size: 0.9rem;
   font-weight: 700;
@@ -1976,6 +1982,77 @@ a { color: inherit; text-decoration: none; }
   color: var(--text);
   line-height: 1.75;
 }
+/* Certifications */
+.student-detail__certs-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+.student-certs {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+.student-certs li {
+  padding: 6px 12px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--blue);
+}
+
+/* Aspiration / needs / impact blocks */
+.student-detail__section { margin-bottom: 28px; }
+.student-detail__section h3 {
+  font-size: 1.05rem;
+  color: var(--blue);
+  margin-bottom: 12px;
+}
+.student-detail__section p {
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.75;
+  margin-bottom: 10px;
+}
+
+/* Itemized need */
+.student-needs {
+  list-style: none;
+  margin-bottom: 12px;
+}
+.student-needs li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--mid);
+  font-size: 0.95rem;
+  color: var(--text);
+}
+.student-needs li span:last-child {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.student-needs__total {
+  border-bottom: none !important;
+  border-top: 2px solid var(--blue) !important;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  color: var(--blue) !important;
+  font-size: 1.05rem !important;
+}
+.student-needs__note {
+  font-size: 0.85rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
 .student-detail__funded {
   font-size: 0.95rem;
   font-weight: 600;
