@@ -1,0 +1,58 @@
+[
+  {
+    "id": "marcus-t",
+    "placeholder": true,
+    "firstName": "Marcus",
+    "lastInitial": "T.",
+    "photo": "images/kilroy_shop_pics/youngwelder.JPG",
+    "ageRange": "16–18",
+    "city": "McKinney, TX",
+    "classWanted": "Welding Certification",
+    "classCost": 4900,
+    "oneLineNeed": "Wants to be the first person in his family with a trade certification.",
+    "story": "Marcus found the shop through a friend and hasn't missed a Saturday since. He picked up a torch for the first time last spring and it clicked immediately — the focus, the precision, the fact that at the end of the day something exists that didn't exist that morning.\n\nSchool never worked like that for him. Sitting still through a lecture felt impossible; running a clean bead did not. His instructors say he has the steadiest hand in his cohort.\n\nA full welding certification takes seven weeks and puts him straight into a trade that is hiring right now. Nobody in his family has held a certification of any kind. He is trying to be the first.",
+    "status": "active"
+  },
+  {
+    "id": "aaliyah-r",
+    "placeholder": true,
+    "firstName": "Aaliyah",
+    "lastInitial": "R.",
+    "photo": "images/kilroy_shop_pics/girl.JPG",
+    "ageRange": "18–20",
+    "city": "Waco, TX",
+    "classWanted": "Blacksmithing Fundamentals",
+    "classCost": 99,
+    "oneLineNeed": "Aged out of foster care and is building a trade from scratch.",
+    "story": "Aaliyah aged out of the foster system at eighteen with no family to fall back on and no interest in taking on debt for a degree she wasn't sure she wanted.\n\nShe walked into an open house on a whim and spent two hours at the forge. She came back the next Saturday, and the one after that. Blacksmithing is where she started, but she is already asking about the fabrication track.\n\nHer first full class is ninety-nine dollars. That is the whole barrier.",
+    "status": "active"
+  },
+  {
+    "id": "devon-b",
+    "placeholder": true,
+    "firstName": "Devon",
+    "lastInitial": "B.",
+    "photo": "images/kilroy_shop_pics/lockedin.JPG",
+    "ageRange": "16–18",
+    "city": "Colorado Springs, CO",
+    "classWanted": "Machining & Fabrication",
+    "classCost": 1000,
+    "oneLineNeed": "Diagnosed with ADHD; the shop is the first classroom that fits how he learns.",
+    "story": "Devon was told for years that he could not focus. Then he found a lathe.\n\nHis instructors describe the same thing every week: the kid who cannot sit through a forty-minute lesson will stand at a machine for three hours without looking up. Hyper-focus is not a deficit in this building. It is the job.\n\nA full week of machining and fabrication classes gives him the fundamentals to move toward a manufacturing apprenticeship. He wants to build engines.",
+    "status": "active"
+  },
+  {
+    "id": "sofia-m",
+    "placeholder": true,
+    "firstName": "Sofia",
+    "lastInitial": "M.",
+    "photo": "images/kilroy_shop_pics/IMG_1731.JPG",
+    "ageRange": "20–24",
+    "city": "McKinney, TX",
+    "classWanted": "Welding Certification",
+    "classCost": 4900,
+    "oneLineNeed": "Working two jobs and training on her days off to get into the trades.",
+    "story": "Sofia works two jobs and spends her days off in the shop. Women make up less than five percent of the trades workforce nationally. She is aware of that number and entirely unbothered by it.\n\nShe started in the beginner blacksmithing class eight months ago and has worked through every discipline the shop offers. Welding certification is the one that turns this into a career instead of a hobby.\n\nHer sponsorship is fully funded — she starts her certification next month.",
+    "status": "funded"
+  }
+]

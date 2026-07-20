@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1848 — Sponsor a Student</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <a href="index.html"><img src="images/1848-logo.png" alt="1848" class="logo-img" /></a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#classes">Classes</a></li>
+      <li><a href="donate.html">Learn More</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="invest.html" class="btn-donate">Invest</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="toggleMenu()">☰</button>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero hero--compact hero--students">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">A Name and a Need</p>
+      <h1 class="hero-tagline">Sponsor a Student.<br><strong>Transform a Life.</strong></h1>
+      <p class="hero-sub">Every student here has a story, a trade they want to learn, and one thing standing in the way. Pick the one that speaks to you.</p>
+      <div class="donate-hero-btns">
+        <a href="#gallery" class="btn-primary">Meet the Students</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="pillars-section">
+    <div class="container">
+      <h2>How It Works</h2>
+      <p class="howitworks-copy">Scroll the gallery below and read their stories. Choose the one whose situation you want to change. Your gift covers the specific class or certification that student is working toward — from a first blacksmithing session to a full welding cert.</p>
+    </div>
+  </section>
+
+  <!-- ===== STUDENT GALLERY ===== -->
+  <section id="gallery" class="featured-section">
+    <div class="container">
+
+      <div class="match-banner">
+        <span class="match-banner__tag">Matching Grant Active</span>
+        <p>Every dollar is doubled — there is currently a <strong>$100,000 matching grant</strong> for all gifts. Your sponsorship goes twice as far.</p>
+      </div>
+
+      <p class="eyebrow">Our Students</p>
+      <h2>Meet the People Behind the Work</h2>
+
+      <div id="student-gallery" class="student-grid">
+        <noscript>
+          <p>Student profiles require JavaScript. <a href="invest.html#tiers">See our giving tiers instead →</a></p>
+        </noscript>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== STUDENT DETAIL (rendered by students.js when ?id= is present) ===== -->
+  <section id="student-detail" class="featured-section student-detail" hidden></section>
+
+  <!-- ===== CROSS-LINK TO TIERS ===== -->
+  <section class="pillars-section">
+    <div class="container crosslink-block">
+      <h2>Prefer to Fund a Program?</h2>
+      <p>Not sure which student to pick? Our giving tiers let you fund an outcome instead of a person — from $20 to full scholarship naming rights.</p>
+      <a href="invest.html#tiers" class="btn-primary">See Our Giving Tiers</a>
+    </div>
+  </section>
+
+  <!-- ===== AMERICA'S FAMILY FOOTNOTE ===== -->
+  <section class="amfol-footnote">
+    <div class="container">
+      <p>1848 is a marquee program of <a href="https://amfol.org" target="_blank">America's Family</a>, a registered 501(c)(3). Every dollar goes directly to helping a student via scholarships.</p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="contact" class="footer">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <img src="images/1848-logo.png" alt="1848" class="logo-img footer-logo-img" />
+        <p>Powered by Hope. Fueled by Technology.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="index.html#classes">Classes</a></li>
+          <li><a href="index.html#classes">Disciplines</a></li>
+          <li><a href="https://kilroysworkshop.com" target="_blank">Kilroy's Workshop</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="donate.html#employers">For Employers</a></li>
+          <li><a href="students.html">Sponsor a Student</a></li>
+          <li><a href="invest.html#tiers">Giving Tiers</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>About</h4>
+        <ul>
+          <li><a href="https://a.co/d/02BtQ1rS" target="_blank">Our Book</a></li>
+          <li><a href="https://tinyurl.com/1848Music" target="_blank">Our Music</a></li>
+          <li><a href="https://amfol.org" target="_blank">AMFOL</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><a href="tel:2144259272">214-425-9272</a></p>
+        <p><a href="mailto:Steveb@1848.net">Steveb@1848.net</a></p>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 1848. All rights reserved. &nbsp;|&nbsp; <a href="https://1848.net" target="_blank">1848.net</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="students.js"></script>
+</body>
+</html>
