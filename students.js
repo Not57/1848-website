@@ -20,9 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
       // of the old shape rendering instead of blanking the gallery.
       const students = Array.isArray(data) ? data : data.students || [];
       students.forEach(checkPrivacy);
+      assignSlugs(students);
 
       const id = new URLSearchParams(window.location.search).get('id');
-      const match = id ? students.find((s) => s.id === id) : null;
+      const match = id ? students.find((s) => s.slug === id) : null;
 
       if (match) {
         renderDetail(match, detail, gallery);
@@ -60,6 +61,47 @@ function displayName(s) {
   return [s.firstName, s.lastInitial].filter(Boolean).join(' ');
 }
 
+// The link name used in students.html?id=... There is no field for this in the
+// CMS — asking a non-technical editor to hand-type a URL-safe string just
+// produced errors. It is derived from the name instead.
+//
+// An explicit "id" in the JSON still wins, so links already shared for the
+// original profiles keep working even if their names are edited later.
+function slugFor(s) {
+  if (s.id) return s.id;
+  return [s.firstName, s.lastInitial]
+    .filter(Boolean)
+    .join('-')
+    // Fold accents to plain letters first, so José becomes jose-r and not jos-r.
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+// Two students with the same first name and last initial would derive the same
+// link. Second and later duplicates get a numbered suffix so every student
+// stays reachable.
+function assignSlugs(students) {
+  const seen = new Map();
+  students.forEach((s) => {
+    let slug = slugFor(s);
+    if (seen.has(slug)) {
+      const n = seen.get(slug) + 1;
+      seen.set(slug, n);
+      console.warn(
+        `[students] Two students share the link name "${slug}". ` +
+          `${displayName(s)} is at "${slug}-${n}". Set an explicit "id" in students.json to control this.`
+      );
+      slug = `${slug}-${n}`;
+    } else {
+      seen.set(slug, 1);
+    }
+    s.slug = slug;
+  });
+}
+
 function formatCost(cost) {
   return typeof cost === 'number' ? '$' + cost.toLocaleString('en-US') : '';
 }
@@ -81,7 +123,7 @@ function renderGallery(students, gallery) {
     const card = document.createElement('a');
     card.className = 'student-card';
     if (s.status === 'funded') card.classList.add('student-card--funded');
-    card.href = 'students.html?id=' + encodeURIComponent(s.id);
+    card.href = 'students.html?id=' + encodeURIComponent(s.slug);
 
     const figure = document.createElement('div');
     figure.className = 'student-photo';

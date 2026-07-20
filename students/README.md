@@ -84,8 +84,11 @@ Notes:
 
 - Everything sits inside `{ "students": [ ... ] }`. Don't unwrap it — the CMS
   cannot edit a bare list.
-- `id` becomes the student's web address (`students.html?id=marcus-t`) and must
-  be unique. Changing it breaks any link already sent out.
+- **`id` is optional.** Leave it out and the page works the address out from the
+  student's name — `José R.` becomes `students.html?id=jose-r`. There is no field
+  for it in the CMS. Set it by hand only when you need a specific URL to stay
+  fixed regardless of name edits; the four original profiles have one for that
+  reason.
 - **There is no total field.** The page sums `needs` itself. `amount` is a plain
   number — `4900`, not `"$4,900"`.
 - `status` is `"active"` or `"funded"`.

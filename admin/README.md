@@ -44,12 +44,8 @@ This is a legal and ethical requirement, not a formality.
 
 ### Filling in a student
 
-Most fields explain themselves. Four worth knowing:
+Most fields explain themselves. Three worth knowing:
 
-- **Web link name** — becomes their web address, like
-  `1848.net/students.html?id=marcus-t`. Lowercase and dashes only. You can send
-  that link to one donor about one student. Don't change it after you've shared
-  it, or the old link breaks.
 - **Photo** — click *Choose an image* and upload. Roughly 4:3, wider than tall.
   The student working, decent light, face visible. Not stock photos, not group
   shots where you can't tell who it is.
@@ -58,6 +54,27 @@ Most fields explain themselves. Four worth knowing:
   Transportation, Housing, Emergency assistance. **Never type a total.** The site
   adds them up, so the total can never disagree with the line items. Donors see
   the breakdown and can cover one line or all of it.
+
+### Each student gets their own link
+
+Every student has a web address of their own, worked out from their name:
+
+```
+Marcus T.  ->  1848.net/students.html?id=marcus-t
+José R.    ->  1848.net/students.html?id=jose-r
+```
+
+You don't type this anywhere and there's no field for it. Add the student, and
+the link exists. Open their card on the site and copy the address bar — that's
+the link to text one donor about one student.
+
+Two things to know:
+
+- **If you fix a typo in a student's name, their link changes.** Anyone holding
+  the old link lands on the full gallery instead of an error, so nothing breaks
+  badly, but re-send it if you've already shared it.
+- **Two students with the same first name and last initial** get `-2` on the
+  second one (`steve-b`, `steve-b-2`). Rare, and it sorts itself out.
 
 ### When a student gets sponsored
 

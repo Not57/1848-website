@@ -45,11 +45,12 @@ collections:
                 widget: string
                 pattern: ['^[A-Z]\.$', "One capital letter and a period, like B."]
 
-              - name: id
-                label: "Web link name"
-                widget: string
-                hint: "Lowercase, dashes, no spaces. Becomes 1848.net/students.html?id=this"
-                pattern: ['^[a-z0-9-]+$', "Lowercase letters, numbers, and dashes only"]
+              # There is deliberately no "web link name" field. It used to be
+              # here and it was the one thing that reliably stopped people --
+              # the browser autocapitalizes the first letter, which then failed
+              # the lowercase-only rule. students.js derives the link from the
+              # student's name instead. An explicit "id" can still be set by
+              # hand in students.json if a specific URL is ever needed.
 
               - name: photo
                 label: Photo
