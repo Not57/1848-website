@@ -14,7 +14,7 @@ backend:
   # OAuth proxy. GitHub Pages cannot hold a client secret, so the token exchange
   # runs on a Cloudflare Worker. Replace this placeholder with the worker URL —
   # login will not work until you do. Setup steps are in admin/README.md.
-  base_url: https://REPLACE-ME.workers.dev
+  base_url: https://sveltia-cms-auth.brooksloukas4.workers.dev
 
 media_folder: "images/students"
 public_folder: "/images/students"
