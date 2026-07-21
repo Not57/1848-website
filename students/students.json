@@ -1,3 +1,19 @@
 {
-  "students": []
+  "students": [
+    {
+      "trade": "Welding",
+      "impact": "test",
+      "classWanted": "test",
+      "city": "Denton, TX",
+      "aspiration": "test",
+      "lastInitial": "T.",
+      "oneLineNeed": "Test",
+      "photo": "/images/students/img_0256.jpeg",
+      "status": "active",
+      "story": "test test test",
+      "firstName": "Test",
+      "ageRange": "20–24",
+      "campus": "McKinney, TX"
+    }
+  ]
 }
