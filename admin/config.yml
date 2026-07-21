@@ -43,6 +43,7 @@ collections:
               - name: lastInitial
                 label: "Last initial"
                 widget: string
+                required: false
                 pattern: ['^[A-Z]\.$', "One capital letter and a period, like B."]
 
               # There is deliberately no "web link name" field. It used to be
