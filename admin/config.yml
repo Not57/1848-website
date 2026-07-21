@@ -61,11 +61,13 @@ collections:
               - name: ageRange
                 label: "Age range"
                 widget: select
+                required: false
                 options: ["14–15", "16–18", "18–20", "20–24", "25+"]
 
               - name: city
                 label: "Where they live"
                 widget: string
+                required: false
                 hint: "City and state. Never a street address."
 
               - name: campus
@@ -88,10 +90,12 @@ collections:
               - name: classWanted
                 label: "Specific class or program"
                 widget: string
+                required: false
 
               - name: certifications
                 label: "Certifications they'll earn"
                 widget: list
+                required: false
                 field: { name: cert, label: Certification, widget: string }
 
               - name: oneLineNeed
@@ -102,15 +106,18 @@ collections:
               - name: story
                 label: "Their story and what they've overcome"
                 widget: text
-                hint: "Leave a blank line between paragraphs."
+                required: false
+                hint: "Leave a blank line between paragraphs. Recommended."
 
               - name: aspiration
                 label: "Their dreams and career goals"
                 widget: text
+                required: false
 
               - name: impact
                 label: "What their success changes for their family and community"
                 widget: text
+                required: false
 
               # Itemized so a donor can cover one line instead of the whole
               # amount. The site sums these — never type a total anywhere.
@@ -118,6 +125,7 @@ collections:
                 label: "What they need funded"
                 label_singular: "Need"
                 widget: list
+                required: false
                 summary: "{{fields.label}} — ${{fields.amount}}"
                 fields:
                   - name: label
