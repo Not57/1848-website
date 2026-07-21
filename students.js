@@ -19,6 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
       // top-level array. The Array.isArray branch keeps a stale cached copy
       // of the old shape rendering instead of blanking the gallery.
       const students = Array.isArray(data) ? data : data.students || [];
+
+      // Empty state. With no students listed, the student sections stay hidden
+      // and the page reads as a plain giving-tiers page. The moment an editor
+      // adds one student through /admin/, they reveal themselves on next load.
+      if (!students.length) return;
+
+      revealStudentSections();
       students.forEach(checkPrivacy);
       assignSlugs(students);
 
@@ -59,6 +66,22 @@ function checkPrivacy(s) {
 
 function displayName(s) {
   return [s.firstName, s.lastInitial].filter(Boolean).join(' ');
+}
+
+// The student-facing sections (How It Works, the gallery) ship with the `hidden`
+// attribute so that with no students listed — or if this script never loads —
+// invest.html reads as a plain giving-tiers page. Called only when there is at
+// least one student; it also repoints the hero button from the tiers at the
+// gallery.
+function revealStudentSections() {
+  document.querySelectorAll('.student-section').forEach((el) => {
+    el.hidden = false;
+  });
+  const cta = document.getElementById('hero-cta');
+  if (cta) {
+    cta.setAttribute('href', '#gallery');
+    cta.textContent = 'See the Students';
+  }
 }
 
 // The link name used in students.html?id=... There is no field for this in the
@@ -123,7 +146,7 @@ function renderGallery(students, gallery) {
     const card = document.createElement('a');
     card.className = 'student-card';
     if (s.status === 'funded') card.classList.add('student-card--funded');
-    card.href = 'students.html?id=' + encodeURIComponent(s.slug);
+    card.href = location.pathname + '?id=' + encodeURIComponent(s.slug);
 
     const figure = document.createElement('div');
     figure.className = 'student-photo';
@@ -195,7 +218,7 @@ function renderDetail(s, detail, gallery) {
 
   const back = document.createElement('a');
   back.className = 'student-back-link';
-  back.href = 'students.html';
+  back.href = location.pathname;
   back.textContent = '← Back to all students';
   detail.appendChild(back);
 
@@ -273,7 +296,7 @@ function renderDetail(s, detail, gallery) {
 
     const other = document.createElement('a');
     other.className = 'btn-primary';
-    other.href = 'students.html';
+    other.href = location.pathname;
     other.textContent = 'Sponsor another student';
     text.appendChild(other);
   } else {

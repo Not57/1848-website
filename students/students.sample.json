@@ -1,0 +1,127 @@
+{
+  "students": [
+    {
+      "trade": "Welding",
+      "impact": "A certified structural welder in this market starts near $55,000. That is more than anyone in Marcus's household currently earns, and it arrives with no student debt attached.",
+      "classWanted": "Welding Certification",
+      "city": "McKinney, TX",
+      "aspiration": "Structural welding on commercial builds, then his own rig and his own contracts by thirty.",
+      "lastInitial": "T.",
+      "oneLineNeed": "Wants to be the first person in his family with a trade certification.",
+      "photo": "images/kilroy_shop_pics/youngwelder.JPG",
+      "status": "active",
+      "story": "Marcus found the shop through a friend and hasn't missed a Saturday since. He picked up a torch for the first time last spring and it clicked immediately — the focus, the precision, the fact that at the end of the day something exists that didn't exist that morning.\n\nSchool never worked like that for him. Sitting still through a lecture felt impossible; running a clean bead did not. His instructors say he has the steadiest hand in his cohort.\n\nA full welding certification takes seven weeks and puts him straight into a trade that is hiring right now. Nobody in his family has held a certification of any kind. He is trying to be the first.",
+      "certifications": [
+        "AWS D1.1 Structural Steel",
+        "OSHA 10"
+      ],
+      "id": "marcus-t",
+      "firstName": "Marcus",
+      "needs": [
+        {
+          "label": "Tuition",
+          "amount": 4900
+        },
+        {
+          "label": "Tools and gear",
+          "amount": 600
+        },
+        {
+          "label": "Transportation",
+          "amount": 1200
+        }
+      ],
+      "ageRange": "16–18",
+      "campus": "McKinney, TX"
+    },
+    {
+      "trade": "Blacksmithing",
+      "impact": "Aaliyah has no family safety net. A trade she can practice anywhere is the difference between stability and starting over every time something goes wrong.",
+      "classWanted": "Blacksmithing Fundamentals",
+      "city": "Waco, TX",
+      "aspiration": "Work through the fabrication track and into a metal shop, with a long-term goal of running her own studio.",
+      "lastInitial": "R.",
+      "oneLineNeed": "Aged out of foster care and is building a trade from scratch.",
+      "photo": "images/kilroy_shop_pics/girl.JPG",
+      "status": "active",
+      "story": "Aaliyah aged out of the foster system at eighteen with no family to fall back on and no interest in taking on debt for a degree she wasn't sure she wanted.\n\nShe walked into an open house on a whim and spent two hours at the forge. She came back the next Saturday, and the one after that. Blacksmithing is where she started, but she is already asking about the fabrication track.\n\nHer first full class is ninety-nine dollars. That is the whole barrier.",
+      "certifications": [
+        "Shop Safety Certification"
+      ],
+      "id": "aaliyah-r",
+      "firstName": "Aaliyah",
+      "needs": [
+        {
+          "label": "Tuition",
+          "amount": 99
+        },
+        {
+          "label": "Tools and gear",
+          "amount": 150
+        }
+      ],
+      "ageRange": "18–20",
+      "campus": "McKinney, TX"
+    },
+    {
+      "trade": "Machining",
+      "impact": "Devon was on track to leave school with no credential and no plan. A NIMS certification puts him in front of local manufacturers who are actively short on machinists.",
+      "classWanted": "Machining & Fabrication",
+      "city": "Colorado Springs, CO",
+      "aspiration": "A manufacturing apprenticeship, then engine work — he has wanted to build motors since he was twelve.",
+      "lastInitial": "B.",
+      "oneLineNeed": "Diagnosed with ADHD; the shop is the first classroom that fits how he learns.",
+      "photo": "images/kilroy_shop_pics/lockedin.JPG",
+      "status": "active",
+      "story": "Devon was told for years that he could not focus. Then he found a lathe.\n\nHis instructors describe the same thing every week: the kid who cannot sit through a forty-minute lesson will stand at a machine for three hours without looking up. Hyper-focus is not a deficit in this building. It is the job.\n\nA full week of machining and fabrication classes gives him the fundamentals to move toward a manufacturing apprenticeship. He wants to build engines.",
+      "certifications": [
+        "NIMS Machining Level I",
+        "OSHA 10"
+      ],
+      "id": "devon-b",
+      "firstName": "Devon",
+      "needs": [
+        {
+          "label": "Tuition",
+          "amount": 1000
+        },
+        {
+          "label": "Tools and gear",
+          "amount": 400
+        }
+      ],
+      "ageRange": "16–18",
+      "campus": "Colorado Springs, CO"
+    },
+    {
+      "trade": "Welding",
+      "impact": "One certification replaces two jobs with one career. Sofia also becomes the person the next young woman in this program sees and points to.",
+      "classWanted": "Welding Certification",
+      "city": "McKinney, TX",
+      "aspiration": "Certified welder on a full-time crew, off the two-job schedule, and eventually a shop lead.",
+      "lastInitial": "M.",
+      "oneLineNeed": "Working two jobs and training on her days off to get into the trades.",
+      "photo": "images/kilroy_shop_pics/IMG_1731.JPG",
+      "status": "funded",
+      "story": "Sofia works two jobs and spends her days off in the shop. Women make up less than five percent of the trades workforce nationally. She is aware of that number and entirely unbothered by it.\n\nShe started in the beginner blacksmithing class eight months ago and has worked through every discipline the shop offers. Welding certification is the one that turns this into a career instead of a hobby.\n\nHer sponsorship is fully funded — she starts her certification next month.",
+      "certifications": [
+        "AWS D1.1 Structural Steel",
+        "OSHA 10"
+      ],
+      "id": "sofia-m",
+      "firstName": "Sofia",
+      "needs": [
+        {
+          "label": "Tuition",
+          "amount": 4900
+        },
+        {
+          "label": "Tools and gear",
+          "amount": 600
+        }
+      ],
+      "ageRange": "20–24",
+      "campus": "McKinney, TX"
+    }
+  ]
+}

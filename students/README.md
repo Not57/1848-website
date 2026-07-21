@@ -1,7 +1,14 @@
 # Student Data
 
-`students.html` builds itself from `students.json`. Nobody should be editing this
-file by hand.
+The sponsor-a-student gallery on `invest.html` builds itself from `students.json`.
+Nobody should be editing this file by hand.
+
+**The live file ships empty** — `{ "students": [] }`. With no students listed,
+`invest.html` hides the student sections and shows only the giving tiers. Add the
+first student through `/admin/` and the student sections appear automatically on
+the next load. The four original fictional profiles are kept in
+`students.sample.json` for reference and local testing — never copy them into the
+live file.
 
 ## Use the form instead
 
@@ -22,9 +29,10 @@ ethical requirement, not a formality.
 The release also has to cover the career goals and family-impact fields, which
 are more personal than a standard photo release usually accounts for.
 
-**The profiles currently in `students.json` are fictional** — invented for
-building and testing this page. Nothing on the page marks them as such. Delete
-all four before the page goes in front of donors.
+**The live `students.json` ships empty on purpose** — no student goes on the
+page until a signed release is on file. The four fictional profiles used for
+building and testing now live in `students.sample.json`; they must never be
+copied into the live file, since nothing on the page marks them as invented.
 
 ---
 
@@ -85,7 +93,7 @@ Notes:
 - Everything sits inside `{ "students": [ ... ] }`. Don't unwrap it — the CMS
   cannot edit a bare list.
 - **`id` is optional.** Leave it out and the page works the address out from the
-  student's name — `José R.` becomes `students.html?id=jose-r`. There is no field
+  student's name — `José R.` becomes `invest.html?id=jose-r`. There is no field
   for it in the CMS. Set it by hand only when you need a specific URL to stay
   fixed regardless of name edits; the four original profiles have one for that
   reason.
@@ -104,7 +112,7 @@ cd website-revamp
 python3 -m http.server 8000
 ```
 
-Then open <http://localhost:8000/students.html>.
+Then open <http://localhost:8000/invest.html>.
 
 ---
 

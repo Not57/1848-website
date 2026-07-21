@@ -33,20 +33,46 @@
       <h1 class="hero-tagline">Forge a Future.<br><strong>Sponsor a Student.</strong></h1>
       <p class="hero-sub">Your gift puts a student in the shop, in front of the fire, and on a path to a real career.</p>
       <div class="donate-hero-btns">
-        <a href="#tiers" class="btn-primary">See Giving Tiers</a>
+        <a id="hero-cta" href="#tiers" class="btn-primary">See Giving Tiers</a>
       </div>
     </div>
   </section>
 
-  <!-- ===== GIVING TIERS ===== -->
-  <section id="tiers" class="pillars-section">
+  <!-- ===== HOW IT WORKS (revealed by students.js only when a student exists) ===== -->
+  <section class="pillars-section student-section" hidden>
+    <div class="container">
+      <h2>How It Works</h2>
+      <p class="howitworks-copy">People don't simply want to fund programs — they want to change lives. So instead of asking you to support an abstract cause, we're asking you to walk alongside one person whose future you can help rewrite. Read their stories below, pick the one that speaks to you, and see exactly what they need: tuition, tools, transportation, or all of it. Cover one line or the whole thing.</p>
+    </div>
+  </section>
+
+  <!-- ===== STUDENT GALLERY (revealed by students.js only when a student exists) ===== -->
+  <section id="gallery" class="featured-section student-section" hidden>
     <div class="container">
 
-      <!-- Matching-grant banner -->
       <div class="match-banner">
         <span class="match-banner__tag">Matching Grant Active</span>
         <p>Every dollar is doubled — there is currently a <strong>$100,000 matching grant</strong> for all gifts. Your sponsorship goes twice as far.</p>
       </div>
+
+      <p class="eyebrow">Our Students</p>
+      <h2>Meet the People Behind the Work</h2>
+
+      <div id="student-gallery" class="student-grid">
+        <noscript>
+          <p>Student profiles require JavaScript. <a href="#tiers">See our giving tiers instead →</a></p>
+        </noscript>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== STUDENT DETAIL (rendered by students.js when ?id= is present) ===== -->
+  <section id="student-detail" class="featured-section student-detail" hidden></section>
+
+  <!-- ===== GIVING TIERS ===== -->
+  <section id="tiers" class="pillars-section">
+    <div class="container">
 
       <h2>Choose Your Impact</h2>
 
@@ -116,15 +142,6 @@
         </div>
 
       </div>
-    </div>
-  </section>
-
-  <!-- ===== CROSS-LINK TO SPONSOR A STUDENT ===== -->
-  <section class="featured-section">
-    <div class="container crosslink-block">
-      <h2>Rather Help a Specific Student?</h2>
-      <p>Put a name and a face on your gift. Read our students' stories, pick the one that speaks to you, and fund the exact class they're working toward.</p>
-      <a href="students.html" class="btn-primary">Meet the Students</a>
     </div>
   </section>
 
@@ -205,7 +222,7 @@
         <h4>Connect</h4>
         <ul>
           <li><a href="donate.html#employers">For Employers</a></li>
-          <li><a href="students.html">Sponsor a Student</a></li>
+          <li><a href="invest.html#gallery">Sponsor a Student</a></li>
           <li><a href="invest.html#tiers">Giving Tiers</a></li>
           <li><a href="donate.html#employers">Civic Leaders</a></li>
         </ul>
@@ -233,5 +250,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="students.js"></script>
 </body>
 </html>

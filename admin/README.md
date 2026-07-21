@@ -60,8 +60,8 @@ Most fields explain themselves. Three worth knowing:
 Every student has a web address of their own, worked out from their name:
 
 ```
-Marcus T.  ->  1848.net/students.html?id=marcus-t
-José R.    ->  1848.net/students.html?id=jose-r
+Marcus T.  ->  1848.net/invest.html?id=marcus-t
+José R.    ->  1848.net/invest.html?id=jose-r
 ```
 
 You don't type this anywhere and there's no field for it. Add the student, and
