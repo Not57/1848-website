@@ -1,3 +1,13 @@
 {
-  "students": []
+  "students": [
+    {
+      "status": "active",
+      "firstName": "Wilberson",
+      "campus": "McKinney, TX",
+      "trade": "Welding",
+      "oneLineNeed": "Aspiring Welder",
+      "photo": "/images/students/2026-07-21_18-58-41.png",
+      "needs": []
+    }
+  ]
 }
