@@ -1808,7 +1808,11 @@ a { color: inherit; text-decoration: none; }
 /* Gallery */
 .student-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  /* auto-fill (not auto-fit) keeps empty tracks, and the fixed 300px cap stops
+     a lone card from stretching to fill the row and squashing its photo into a
+     sliver. justify-content centers a single card or a short final row. */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 300px));
+  justify-content: center;
   gap: 24px;
   text-align: left;
   align-items: stretch;
@@ -1833,14 +1837,16 @@ a { color: inherit; text-decoration: none; }
 
 .student-photo {
   position: relative;
-  height: 260px;
+  /* Portrait 4:5 frame — a fixed shape regardless of how many cards there are,
+     so an upload always fills the box and the face stays visible. */
+  aspect-ratio: 4 / 5;
   overflow: hidden;
 }
 .student-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center;
   display: block;
 }
 
