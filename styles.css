@@ -1805,6 +1805,12 @@ a { color: inherit; text-decoration: none; }
   text-align: center;
 }
 
+/* Detail mode: a single student's page shows only their detail section. Every
+   other top-level section is hidden; nav and footer stay for navigation. */
+body.viewing-student > section:not(#student-detail) {
+  display: none;
+}
+
 /* Gallery */
 .student-grid {
   display: grid;

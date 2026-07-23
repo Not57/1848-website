@@ -208,6 +208,11 @@ function renderGallery(students, gallery) {
 }
 
 function renderDetail(s, detail, gallery) {
+  // Detail mode: hide every other section (hero, how-it-works, tiers, naming,
+  // open house) so the student's own page shows only their story. A body class
+  // drives it via CSS; nav and footer stay for navigation. See styles.css.
+  document.body.classList.add('viewing-student');
+
   const gallerySection = document.getElementById('gallery');
   if (gallerySection) gallerySection.hidden = true;
   gallery.hidden = true;
