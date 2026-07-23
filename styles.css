@@ -1623,6 +1623,8 @@ a { color: inherit; text-decoration: none; }
     text-align: left;
     max-width: 100%;
   }
+  /* The CTA crowds the photo on small screens — hide it there only. */
+  .hero-stagger__headline .donate-hero-btns { display: none; }
 }
 
 .match-banner {
