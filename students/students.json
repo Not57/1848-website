@@ -1,6 +1,15 @@
 {
   "students": [
     {
+      "status": "active",
+      "firstName": "Wilberson",
+      "campus": "McKinney, TX",
+      "trade": "Welding",
+      "oneLineNeed": "Aspiring Welder",
+      "photo": "/images/students/2026-07-21_18-58-41.png",
+      "needs": []
+    },
+    {
       "trade": "Welding",
       "impact": "As a neurodivergent person, I am very aware that few people get opportunities like this sponsorship. I am not afraid to be pushed out of my comfort zone. This opportunity would help my family because I would use my learned skills to support myself and they would know that I could provide for myself. Who knows, maybe I could weld for my grandfather since he can no longer weld for himself. That would make him so proud.",
       "city": "Denton, TX",
