@@ -1572,6 +1572,9 @@ a { color: inherit; text-decoration: none; }
   animation-delay: 0.2s;
 }
 
+/* Left-align the CTA under the left-aligned headline (the shared rule centers it). */
+.hero-stagger__headline .donate-hero-btns { justify-content: flex-start; }
+
 .hero-stagger__title {
   font-family: 'Inter', sans-serif;
   font-size: clamp(2.2rem, 5vw, 4rem);
