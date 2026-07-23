@@ -68,6 +68,12 @@ function displayName(s) {
   return [s.firstName, s.lastInitial].filter(Boolean).join(' ');
 }
 
+// The age field is a range like "20–24". On its own it read as a mystery number,
+// so it is labelled "Age 20–24" everywhere it shows.
+function ageLabel(s) {
+  return s.ageRange ? 'Age ' + s.ageRange : '';
+}
+
 // The student-facing sections (How It Works, the gallery) ship with the `hidden`
 // attribute so that with no students listed — or if this script never loads —
 // invest.html reads as a plain giving-tiers page. Called only when there is at
@@ -174,7 +180,7 @@ function renderGallery(students, gallery) {
 
     const meta = document.createElement('p');
     meta.className = 'student-card__meta';
-    meta.textContent = [s.ageRange, s.city].filter(Boolean).join(' · ');
+    meta.textContent = [ageLabel(s), s.city].filter(Boolean).join(' · ');
     body.appendChild(meta);
 
     const need = document.createElement('p');
@@ -258,7 +264,7 @@ function renderDetail(s, detail, gallery) {
 
   const meta = document.createElement('p');
   meta.className = 'student-detail__meta';
-  meta.textContent = [s.ageRange, s.city].filter(Boolean).join(' · ');
+  meta.textContent = [ageLabel(s), s.city].filter(Boolean).join(' · ');
   text.appendChild(meta);
 
   const facts = document.createElement('ul');
